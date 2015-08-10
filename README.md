@@ -14,3 +14,13 @@ cd ..
 
 # RUN: (this will install nwjs packages for arm the first time)
 nw rpi-game-1
+
+
+
+#PYTHON
+sudo apt-get install build-essential python-dev python-smbus python-pip git
+git clone https://github.com/adafruit/Adafruit_Python_MPR121.git
+cd Adafruit_Python_MPR121
+sudo python setup.py install
+
+sudo python rpi-adafruit-listener.py
