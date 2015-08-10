@@ -5,7 +5,7 @@ Game 1
 - curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
 
 - sudo apt-get install --yes nodejs
-- npm install --ignore-scripts nw@0.12.0
+- npm install -g --ignore-scripts nw@0.12.0
 - export NWJS_URLBASE=https://github.com/jtg-gg/node-webkit/releases/download/nw-v
 
 - git clone https://github.com/bravecaloi/rpi-game-1.git
