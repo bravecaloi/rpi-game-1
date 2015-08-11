@@ -37,7 +37,7 @@ while True:
         pin_bit = 1 << i
         # First check if transitioned from not touched to touched.
         if current_touched & pin_bit and not last_touched & pin_bit:
-            urllib2.urlopen('http://' + serverIP + '/touched/' + format(i))
+            urllib2.urlopen('http://' + serverIP + '/touched/' + format(i)).read()
             # response = urllib2.urlopen('http://' + serverIP + '/touched/' + format(i))
             # html = response.read()
             # print html
