@@ -1,11 +1,11 @@
 AVAILABLE_NOTES = 7;
 
 exports.initPiano = function(req, res) {
-  global.audio_type = 'audio/DaDeMo_-_Grand_Piano_Fazioli_Major_Chords_Low_Key/';
+  global.audio_type = 'audio/piano2/';
 
   var audios = [];
 
-  for (var num = 1; num < AVAILABLE_NOTES + 1; num++) {
+  for (var num = 0; num < AVAILABLE_NOTES; num++) {
     audios[num] = { "curr": 0, "sounds": [] };
 
     // fast key strokes
