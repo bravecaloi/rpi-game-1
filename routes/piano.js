@@ -1,4 +1,4 @@
-AVAILABLE_NOTES = 7;
+AVAILABLE_NOTES = 12;
 
 exports.initPiano = function(req, res) {
   global.audio_type = 'audio/piano2/';
@@ -21,7 +21,7 @@ exports.initPiano = function(req, res) {
 exports.touched = function(req, res) {
   var num = req.params.number;
 
-  if (num <= AVAILABLE_NOTES) {
+  if (num < AVAILABLE_NOTES) {
     var key = global.audios[num];
 
     key.sounds[key.curr].pause();
