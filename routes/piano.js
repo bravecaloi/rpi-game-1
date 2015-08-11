@@ -1,6 +1,6 @@
 AVAILABLE_NOTES = 12;
 
-exports.initPiano = function(req, res) {
+exports.initPiano = function() {
   global.audio_type = 'audio/piano2/';
 
   var audios = [];
@@ -32,5 +32,5 @@ exports.touched = function(req, res) {
     global.$('#message').text("touched " + num);
   }
 
-  res.json({ "status": 200, "response": "OK" });
+  res.send('OK');
 };
