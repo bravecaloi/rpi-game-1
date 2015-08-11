@@ -24,7 +24,7 @@ if not cap.begin():
 
 # Main loop to print a message every time a pin is touched.
 
-serverIP = "192.168.0.103"
+serverIP = "localhost"
 
 print 'Press Ctrl-C to quit.'
 last_touched = cap.touched()
@@ -37,9 +37,10 @@ while True:
         pin_bit = 1 << i
         # First check if transitioned from not touched to touched.
         if current_touched & pin_bit and not last_touched & pin_bit:
-            response = urllib2.urlopen('http://' + serverIP + '/touched/' + format(i))
-            html = response.read()
-            print html
+            urllib2.urlopen('http://' + serverIP + '/touched/' + format(i))
+            # response = urllib2.urlopen('http://' + serverIP + '/touched/' + format(i))
+            # html = response.read()
+            # print html
 
         # do nothing on realease
         # Next check if transitioned from touched to not touched.
