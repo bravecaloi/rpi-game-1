@@ -1,14 +1,15 @@
 {
-  "name": "node-webkit-express",
-  "version": "0.0.2",
-  "description": "node-webkit-express is a very small nodejs app that runs expressjs in node-webkit.",
+  "name": "animus-rpi-game1",
+  "version": "0.0.1",
+  "description": "piano game",
   "main": "index.html",
   "window": {
-    "width": 600,
-    "height": 550,
+    "width": 900,
+    "height": 450,
     "title": "m-cms edit",
     "toolbar": true
   },
+  "chromium-args": "--disable-setuid-sandbox",
   "scripts": {
     "start": "nodewebkit"
   },
