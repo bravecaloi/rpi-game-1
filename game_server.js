@@ -26,9 +26,15 @@ var game = {
     app.get('/touched/:number', routes.touched);
     /////////////////////////////////////////////////////////////////
 
+    var DELAY_FOR_START = 4000;
+
     http.createServer(app).listen(app.get('port'), function(err){
       console.log('server created');
-      window.document.getElementById('message').innerHTML = "Serever ready!";
+
+      setTimeout(function(){
+          window.document.getElementById('message').innerHTML = "Serever ready!";
+      }, DELAY_FOR_START);
+
     });
   }
 };
