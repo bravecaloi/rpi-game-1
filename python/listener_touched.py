@@ -1,10 +1,10 @@
 import sys
 import time
 import urllib2
-
+import pyglet
 import Adafruit_MPR121.MPR121 as MPR121
 
-print 'Adafruit MPR121 Capacitive Touch Sensor Test'
+print 'Starting Listener Touch Only'
 
 # Create MPR121 instance.
 cap = MPR121.MPR121()
