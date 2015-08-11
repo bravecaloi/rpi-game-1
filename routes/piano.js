@@ -11,7 +11,6 @@ exports.initPiano = function() {
     // fast key strokes
     for (var i = 0; i < 4; i++) {
       var aux = new global.window.Audio(global.audio_type + "" + num + ".wav");
-      aux.load();
       audios[num].sounds.push(aux);
     }
 
