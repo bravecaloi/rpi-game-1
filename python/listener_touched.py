@@ -24,7 +24,7 @@ if not cap.begin():
 
 # Main loop to print a message every time a pin is touched.
 
-serverIP = "localhost"
+serverIP = "localhost:2323"
 
 print 'Press Ctrl-C to quit.'
 last_touched = cap.touched()

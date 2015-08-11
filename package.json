@@ -9,7 +9,7 @@
     "title": "m-cms edit",
     "toolbar": true
   },
-  "chromium-args": "--disable-setuid-sandbox",
+  
   "scripts": {
     "start": "nodewebkit"
   },

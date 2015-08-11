@@ -8,8 +8,8 @@ exports.initPiano = function(req, res) {
   for (var num = 1; num < AVAILABLE_NOTES + 1; num++) {
     audios[num] = { "curr": 0, "sounds": [] };
 
-    // up to n fast key strokes
-    for (var i = 0; i < 50; i++) {
+    // fast key strokes
+    for (var i = 0; i < 4; i++) {
       audios[num].sounds.push(new global.window.Audio(global.audio_type + "" + num + ".wav"));
     }
 

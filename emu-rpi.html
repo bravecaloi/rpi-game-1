@@ -38,12 +38,13 @@
 
     <script type="text/javascript">
       $(document).ready(function(){
+        var server = "192.168.0.104:2323";
 
         $( document ).keypress(function(e) {
           if(e.keyCode >= 49 && e.keyCode <= 55 ){
             $.ajax({
               dataType: "json",
-              url: "http:localhost:2323/touched/" + (e.keyCode - 48),
+              url: "http:"+server+"/touched/" + (e.keyCode - 48),
               success: function(res){ console.log(res); }
             });
           }
@@ -54,7 +55,7 @@
           var num = e.target.id;
           $.ajax({
             dataType: "json",
-            url: "http:localhost:2323/touched/" + num,
+            url: "http:"+server+"/touched/" + num,
             success: function(res){ console.log(res); }
           });
         });
