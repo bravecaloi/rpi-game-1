@@ -22,14 +22,13 @@ exports.touched = function(req, res) {
   var num = req.params.number;
 
   if (num < AVAILABLE_NOTES) {
+    global.$('#message').text("touched " + num);
+        
     var key = global.audios[num];
 
     key.sounds[key.curr].pause();
     key.sounds[key.curr].play();
     key.curr = ++key.curr % key.sounds.length;
-
-  } else {
-    global.$('#message').text("touched " + num);
   }
 
   res.send('OK');
