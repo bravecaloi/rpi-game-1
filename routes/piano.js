@@ -24,7 +24,7 @@ exports.touched = function(req, res) {
   if (num < AVAILABLE_NOTES) {
     var key = global.audios[num];
 
-    // key.sounds[key.curr].pause();
+    key.sounds[key.curr].pause();
     key.sounds[key.curr].play();
     key.curr = ++key.curr % key.sounds.length;
 
