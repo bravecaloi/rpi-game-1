@@ -50,18 +50,18 @@ pygame.init()
 
 # Define mapping of capacitive touch pin presses to sound files
 SOUND_MAPPING = {
-  0: 'audio/piano2/0.wav',
-  1: 'audio/piano2/1.wav',
-  2: 'audio/piano2/2.wav',
-  3: 'audio/piano2/3.wav',
-  4: 'audio/piano2/4.wav',
-  5: 'audio/piano2/5.wav',
-  6: 'audio/piano2/6.wav',
-  7: 'audio/piano2/7.wav',
-  8: 'audio/piano2/8.wav',
-  9: 'audio/piano2/9.wav',
-  10: 'audio/piano2/10.wav',
-  11: 'audio/piano2/11.wav',
+  0: './audio/piano2/0.wav',
+  1: './audio/piano2/1.wav',
+  2: './audio/piano2/2.wav',
+  3: './audio/piano2/3.wav',
+  4: './audio/piano2/4.wav',
+  5: './audio/piano2/5.wav',
+  6: './audio/piano2/6.wav',
+  7: './audio/piano2/7.wav',
+  8: './audio/piano2/8.wav',
+  9: './audio/piano2/9.wav',
+  10: './audio/piano2/10.wav',
+  11: './audio/piano2/11.wav',
 }
 
 sounds = [0,0,0,0,0,0,0,0,0,0,0,0]
