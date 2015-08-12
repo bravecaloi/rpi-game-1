@@ -51,7 +51,7 @@ for key,soundfile in SOUND_MAPPING.iteritems():
         sounds[key] =  pygame.mixer.Sound(soundfile)
         sounds[key].set_volume(10);
 
-serverIP = "localhost"
+serverIP = "localhost:2323"
 
 # Main loop to print a message every time a pin is touched.
 print 'Press Ctrl-C to quit.'
