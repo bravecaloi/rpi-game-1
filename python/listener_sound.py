@@ -28,7 +28,7 @@ pygame.mixer.pre_init(44100, -16, 12, 512)
 pygame.init()
 
 # Define mapping of capacitive touch pin presses to sound files
-os.environ['AUDIO_TYPE'] = 'piano2'
+os.environ['AUDIO_TYPE'] = 'piano2/'
 audio_type = os.environ['AUDIO_TYPE']
 SOUND_MAPPING = {
   0: './audio/'+audio_type+'0.wav',
