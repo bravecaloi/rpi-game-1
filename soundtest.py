@@ -1,31 +1,9 @@
-# Copyright (c) 2014 Adafruit Industries
-# Author: Tony DiCola
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+
 import sys
 import time
 import pygame
 
 import Adafruit_MPR121.MPR121 as MPR121
-
-# Thanks to Scott Garner & BeetBox!
-# https://github.com/scottgarner/BeetBox/
 
 print 'Adafruit MPR121 Capacitive Touch Audio Player Test'
 
@@ -68,7 +46,7 @@ sounds = [0,0,0,0,0,0,0,0,0,0,0,0]
 
 for key,soundfile in SOUND_MAPPING.iteritems():
         sounds[key] =  pygame.mixer.Sound(soundfile)
-        sounds[key].set_volume(1);
+        sounds[key].set_volume(10);
 
 # Main loop to print a message every time a pin is touched.
 print 'Press Ctrl-C to quit.'
@@ -91,17 +69,3 @@ while True:
     # Update last state and wait a short period before repeating.
     last_touched = current_touched
     time.sleep(0.1)
-
-    # Alternatively, if you only care about checking one or a few pins you can
-    # call the is_touched method with a pin number to directly check that pin.
-    # This will be a little slower than the above code for checking a lot of pins.
-    #if cap.is_touched(0):
-    #    print 'Pin 0 is being touched!'
-
-    # If you're curious or want to see debug info for each pin, uncomment the
-    # following lines:
-    #print '\t\t\t\t\t\t\t\t\t\t\t\t\t 0x{0:0X}'.format(cap.touched())
-    #filtered = [cap.filtered_data(i) for i in range(12)]
-    #print 'Filt:', '\t'.join(map(str, filtered))
-    #base = [cap.baseline_data(i) for i in range(12)]
-    #print 'Base:', '\t'.join(map(str, base))
