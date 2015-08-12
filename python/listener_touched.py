@@ -1,7 +1,6 @@
 import sys
 import time
 import urllib2
-import pyglet
 import Adafruit_MPR121.MPR121 as MPR121
 
 print 'Starting Listener Touch Only'
@@ -18,6 +17,7 @@ if not cap.begin():
 serverIP = "localhost:2323"
 
 print 'Press Ctrl-C to quit.'
+
 last_touched = cap.touched()
 while True:
     current_touched = cap.touched()
@@ -28,11 +28,7 @@ while True:
         pin_bit = 1 << i
         # First check if transitioned from not touched to touched.
         if current_touched & pin_bit and not last_touched & pin_bit:
-            #urllib2.urlopen('http://' + serverIP + '/touched/' + format(i))
-            music = pyglet.resource.media('../audio/piano2/'+format(i)+'.wav')
-            music.play()
-            pyglet.app.run()
-
+            urllib2.urlopen('http://' + serverIP + '/touched/' + format(i))
 
     # Update last state and wait a short period before repeating.
     last_touched = current_touched
