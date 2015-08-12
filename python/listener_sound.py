@@ -68,7 +68,13 @@ while True:
             print '{0} touched!'.format(i)
             if (sounds[i]):
                 sounds[i].play()
-            urllib2.urlopen('http://' + serverIP + '/touched/' + format(i))
+            # urllib2.urlopen('http://' + serverIP + '/touched/' + format(i))
+
+        # # Next check if transitioned from touched to not touched.
+        # if not current_touched & pin_bit and last_touched & pin_bit:
+        #     response = urllib2.urlopen('http://' + serverIP + '/released/' + format(i))
+        #     html = response.read()
+        #     print html
 
     # Update last state and wait a short period before repeating.
     last_touched = current_touched
