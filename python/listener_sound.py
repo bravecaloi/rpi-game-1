@@ -2,6 +2,7 @@
 import sys
 import time
 import pygame
+import os
 
 import Adafruit_MPR121.MPR121 as MPR121
 
@@ -26,20 +27,26 @@ if not cap.begin():
 pygame.mixer.pre_init(44100, -16, 12, 512)
 pygame.init()
 
+os.environ['AUDIO_TYPE'] = 'piano2'
+
+# Open child processes via os.system(), popen() or fork() and execv()
+
+audio_type = int(os.environ['AUDIO_TYPE'])
+
 # Define mapping of capacitive touch pin presses to sound files
 SOUND_MAPPING = {
-  0: './audio/piano2/0.wav',
-  1: './audio/piano2/1.wav',
-  2: './audio/piano2/2.wav',
-  3: './audio/piano2/3.wav',
-  4: './audio/piano2/4.wav',
-  5: './audio/piano2/5.wav',
-  6: './audio/piano2/6.wav',
-  7: './audio/piano2/7.wav',
-  8: './audio/piano2/8.wav',
-  9: './audio/piano2/9.wav',
-  10: './audio/piano2/10.wav',
-  11: './audio/piano2/11.wav',
+  0: './audio/'+audio_type+'0.wav',
+  1: './audio/'+audio_type+'1.wav',
+  2: './audio/'+audio_type+'2.wav',
+  3: './audio/'+audio_type+'3.wav',
+  4: './audio/'+audio_type+'4.wav',
+  5: './audio/'+audio_type+'5.wav',
+  6: './audio/'+audio_type+'6.wav',
+  7: './audio/'+audio_type+'7.wav',
+  8: './audio/'+audio_type+'8.wav',
+  9: './audio/'+audio_type+'9.wav',
+  10: './audio/'+audio_type+'10.wav',
+  11: './audio/'+audio_type+'11.wav',
 }
 
 sounds = [0,0,0,0,0,0,0,0,0,0,0,0]
@@ -63,8 +70,7 @@ while True:
             print '{0} touched!'.format(i)
             if (sounds[i]):
                 sounds[i].play()
-        if not current_touched & pin_bit and last_touched & pin_bit:
-            print '{0} released!'.format(i)
+            urllib2.urlopen('http://' + serverIP + '/touched/' + format(i))
 
     # Update last state and wait a short period before repeating.
     last_touched = current_touched
