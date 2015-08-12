@@ -14,8 +14,8 @@ exports.initPiano = function() {
     for (var i = 0; i < 3; i++) {
       // var aux = new global.window.Audio(global.audio_type + "" + num + ".wav");
       // var aux = global.window.document.createElement('audio');
-      var aux = new Sound(global.audio_type + "" + num + ".wav");
-      audios[num].sounds.push(aux);
+      // var aux = new Sound(global.audio_type + "" + num + ".wav");
+      // audios[num].sounds.push(aux);
     }
   }
 
@@ -26,13 +26,13 @@ exports.touched = function(req, res) {
   var num = req.params.number;
 
   if (num < AVAILABLE_NOTES) {
-    var key = global.audios[num];
-
-    // key.sounds[key.curr].pause();
-    key.sounds[key.curr].play();
-    key.curr = ++key.curr % key.sounds.length;
-
-    var key = undefined;
+    // var key = global.audios[num];
+    //
+    // // key.sounds[key.curr].pause();
+    // key.sounds[key.curr].play();
+    // key.curr = ++key.curr % key.sounds.length;
+    //
+    // var key = undefined;
 
     global.$('#message').text("touched " + num);
   }
