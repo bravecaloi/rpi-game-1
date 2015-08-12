@@ -1,3 +1,5 @@
+var Sound = require('node-aplay');
+
 AVAILABLE_NOTES = 12;
 
 exports.initPiano = function() {
@@ -9,14 +11,12 @@ exports.initPiano = function() {
     audios[num] = { "curr": 0, "sounds": [] };
 
     // fast key strokes
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 3; i++) {
       // var aux = new global.window.Audio(global.audio_type + "" + num + ".wav");
-      var aux = global.window.document.createElement('audio');
-      aux.src = global.audio_type + "" + num + ".wav";
-      aux.load();
+      // var aux = global.window.document.createElement('audio');
+      var aux = new Sound(global.audio_type + "" + num + ".wav");
       audios[num].sounds.push(aux);
     }
-
   }
 
   global.audios = audios;
