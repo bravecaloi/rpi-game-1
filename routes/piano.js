@@ -10,15 +10,16 @@ exports.initPiano = function() {
 
     // fast key strokes
     for (var i = 0; i < 4; i++) {
-      var aux = new global.window.Audio(global.audio_type + "" + num + ".wav");
+      // var aux = new global.window.Audio(global.audio_type + "" + num + ".wav");
+      var aux = global.window.document.createElement('audio');
+      aux.src = global.audio_type + "" + num + ".wav";
+      aux.load();
       audios[num].sounds.push(aux);
     }
 
   }
 
   global.audios = audios;
-
-  global.testme = new global.window.Audio(global.audio_type + "" + 3 + ".wav");
 }
 
 exports.touched = function(req, res) {
