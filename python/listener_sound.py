@@ -27,13 +27,9 @@ if not cap.begin():
 pygame.mixer.pre_init(44100, -16, 12, 512)
 pygame.init()
 
-os.environ['AUDIO_TYPE'] = 'piano2'
-
-# Open child processes via os.system(), popen() or fork() and execv()
-
-audio_type = int(os.environ['AUDIO_TYPE'])
-
 # Define mapping of capacitive touch pin presses to sound files
+os.environ['AUDIO_TYPE'] = 'piano2'
+audio_type = os.environ['AUDIO_TYPE']
 SOUND_MAPPING = {
   0: './audio/'+audio_type+'0.wav',
   1: './audio/'+audio_type+'1.wav',
