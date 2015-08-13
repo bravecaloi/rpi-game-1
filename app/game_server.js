@@ -5,11 +5,11 @@ var game = {
   startServer: function(){
 
     /** Module dependencies */
-    var http = require('http')
-      , path = require('path')
-      , express = require('express')
-      , routes = require(path.join(process.cwd(), 'routes', 'piano.js'))
-      , app = express()
+    var http        = require('http')
+      , path        = require('path')
+      , express     = require('express')
+      , controller  = require(path.join(process.cwd(), 'app/controller', 'piano.js'))
+      , app         = express()
     ;
 
     var options = { host: 'localhost', port: 2323 };
@@ -21,10 +21,14 @@ var game = {
     app.use(require('stylus').middleware(path.join(process.cwd(), 'public')));
     app.use(express.static(path.join(process.cwd(), 'public')));
 
-    /////////////////////////// ROUTES //////////////////////////////
-    routes.initPiano();
-    app.get('/touched/:number', routes.touched);
-    /////////////////////////////////////////////////////////////////
+
+    //***** LINK CONTROLLER WITH ROUTES ***************
+
+    app.get('/touched/:number', controller.touched);
+
+    //**************************************************
+
+
 
     var DELAY_FOR_START = 4000;
 
