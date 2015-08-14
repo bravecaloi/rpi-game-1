@@ -8,7 +8,7 @@ var game = {
     var http        = require('http')
       , path        = require('path')
       , express     = require('express')
-      , controller  = require(path.join(process.cwd(), 'app/controller', 'piano.js'))
+      , touchCtrl   = require(path.join(process.cwd(), 'app/js', 'touch_controller.js'))
       , app         = express()
     ;
 
@@ -22,23 +22,14 @@ var game = {
     app.use(express.static(path.join(process.cwd(), 'public')));
 
 
-    //***** LINK CONTROLLER WITH ROUTES ***************
-
-    app.get('/touched/:number', controller.touched);
-
-    //**************************************************
+    // link controllers with routes
+    app.get('/touched/:number', touchCtrl.touched);
 
 
-
-    var DELAY_FOR_START = 4000;
-
+    // start server for touch events
     http.createServer(app).listen(app.get('port'), function(err){
       console.log('server created');
-
-      setTimeout(function(){
-          window.document.getElementById('message').innerHTML = "Serever ready!";
-      }, DELAY_FOR_START);
-
     });
+
   }
 };

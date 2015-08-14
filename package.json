@@ -6,12 +6,11 @@
   },
   "version": "0.0.1",
   "description": "piano game",
-  "main": "index.html",
+  "main": "app/game.html",
   "window": {
-    "width": 900,
-    "height": 450,
     "toolbar": false,
-    "frame": false
+    "frame": true,
+    "kiosk": true
   },
   "scripts": {
     "start": "nodewebkit"

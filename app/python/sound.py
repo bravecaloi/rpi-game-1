@@ -46,10 +46,10 @@ if not cap.begin():
 # Also you can specify an optional I2C bus with the bus keyword parameter.
 #cap.begin(bus=1)
 
-pygame.mixer.pre_init(44100, -16, 12, 512)
+pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
 
-AUDIO_MUSIC_PATH = '/home/pi/workspace/rpi-game-1/audio'
+AUDIO_MUSIC_PATH = '/home/pi/rpi-game-1/app/audio'
 AUDIO_MUSIC_TYPE = AUDIO_MUSIC_PATH + '/piano2/'
 
 # Define mapping of capacitive touch pin presses to sound files
