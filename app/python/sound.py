@@ -50,24 +50,24 @@ pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
 
 AUDIO_MUSIC_PATH = '/home/pi/rpi-game-1/app/audio'
-AUDIO_MUSIC_TYPE = AUDIO_MUSIC_PATH + '/piano2/'
+AUDIO_MUSIC_TYPE = AUDIO_MUSIC_PATH + '/piano/'
 
 # Define mapping of capacitive touch pin presses to sound files
 # tons more sounds are available in / and
 # /usr/share/scratch/Media/Sounds/
 SOUND_MAPPING = {
-  0:  AUDIO_MUSIC_TYPE + '0.wav',
-  1:  AUDIO_MUSIC_TYPE + '1.wav',
-  2:  AUDIO_MUSIC_TYPE + '2.wav',
-  3:  AUDIO_MUSIC_TYPE + '3.wav',
-  4:  AUDIO_MUSIC_TYPE + '4.wav',
-  5:  AUDIO_MUSIC_TYPE + '5.wav',
-  6:  AUDIO_MUSIC_TYPE + '6.wav',
-  7:  AUDIO_MUSIC_TYPE + '7.wav',
-  8:  AUDIO_MUSIC_TYPE + '8.wav',
-  9:  AUDIO_MUSIC_TYPE + '9.wav',
-  10: AUDIO_MUSIC_TYPE + '10.wav',
-  11: AUDIO_MUSIC_TYPE + '11.wav',
+  0:  AUDIO_MUSIC_TYPE + 'DO.wav',
+  1:  AUDIO_MUSIC_TYPE + 'RE.wav',
+  2:  AUDIO_MUSIC_TYPE + 'MI.wav',
+  3:  AUDIO_MUSIC_TYPE + 'FA.wav',
+  4:  AUDIO_MUSIC_TYPE + 'SOL.wav',
+  5:  AUDIO_MUSIC_TYPE + 'LA.wav',
+  6:  AUDIO_MUSIC_TYPE + 'SI.wav',
+  7:  '/opt/sonic-pi/etc/samples/drum_tom_lo_soft.wav',
+  8:  '/opt/sonic-pi/etc/samples/drum_cymbal_open.wav',
+  9:  '/opt/sonic-pi/etc/samples/drum_cymbal_hard.wav',
+  10: '/opt/sonic-pi/etc/samples/drum_cymbal_soft.wav',
+  11: '/opt/sonic-pi/etc/samples/perc_bell.wav',
 }
 
 sounds = [0,0,0,0,0,0,0,0,0,0,0,0]

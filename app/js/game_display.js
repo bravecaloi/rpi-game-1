@@ -7,18 +7,18 @@ $( document ).ready(function(){
 function drawDots(){
   var container = $('#dots_container');
 
-  var h = $(document).height();
-  var w = $(document).width();
+  global.column = Math.floor(($(document).height() / 124));
+  global.line = Math.floor(($(document).width() / 124));
 
-  global.totalDots = ((h * w) / (45 * 45));
+  global.totalDots = global.line * global.column;
 
   for (var i = 0; i < global.totalDots; i++) {
       var dot = document.createElement('div');
       dot.id = "dot_" + i;
       dot.className = 'dot';
-      dot.style.borderColor = getRandomColor();
-      dot.style.backgroundColor = getRandomColor();
-      dot.style.opacity = 0.2;
+      // dot.style.borderColor = "#fff";
+      // dot.style.backgroundColor = getRandomColor();
+      // dot.style.opacity = 0.2;
       container.append(dot);
   }
 }
