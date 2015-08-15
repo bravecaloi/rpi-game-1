@@ -1,18 +1,22 @@
 Game 1
 ===================
 
+#RUN
+- Terminal 1: sudo python rpi-game-1/app/python/sound.py
+- Terminal 2: sudo nw rpi-game-1/
+
+
+#INSTALL
 - sudo apt-get install curl
 - curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
 
 - sudo apt-get install --yes nodejs
+
 - npm install -g --ignore-scripts nw@0.12.0
+- sudo su
 - export NWJS_URLBASE=https://github.com/jtg-gg/node-webkit/releases/download/nw-v
-
-- git clone https://github.com/bravecaloi/rpi-game-1.git
-- npm install
-- cd ..
-- nw rpi-game-1 (this will install nwjs packages for arm the first time)
-
+- nw
+- exit
 
 
 #PYTHON
