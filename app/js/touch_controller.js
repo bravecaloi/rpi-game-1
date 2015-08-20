@@ -6,8 +6,37 @@ exports.touched = function(req, res) {
 
   var keyPressed = req.params.number;
 
-  var dots = getRandomPositionShapeDots();
+  if(keyPressed < 8){
+    drawRandomStar();
+  }else{
+    changeEnvAudioVariable(keyPressed);
+  }
 
+};
+
+var currentAudioEnv = 8;
+AUDIO_LIBS = {};
+
+// Define here the sounds path to use.
+// WARNING: sound files' names have to be the same in all folders
+// TODO DEFINE this directly on the python script?
+AUDIO_LIBS['keyPressed_8']  = 'wav';
+AUDIO_LIBS['keyPressed_9']  = 'wav';
+AUDIO_LIBS['keyPressed_10'] = 'wav';
+AUDIO_LIBS['keyPressed_11'] = 'wav';
+
+function changeEnvAudioVariable(num){
+  $('#keyPressed_' + currentAudioEnv).removeClass('selected');
+  $('#keyPressed_' + num).addClass('selected');
+
+  currentAudioEnv = num;
+
+  process.env['GAME_AUDIO_ENV'] = AUDIO_LIBS['keyPressed_' + currentAudioEnv];
+}
+
+
+function drawRandomStar(){
+  var dots = getRandomPositionShapeDots();
   for (var i = 0; i < dots.length; i++) {
     try {
       var dot = global.window.document.getElementById('dot_' + dots[i]);
@@ -20,7 +49,7 @@ exports.touched = function(req, res) {
       // do nothing, but we should fix it
     }
   }
-};
+}
 
 function getRandomPositionShapeDots(){
   var dots = [];

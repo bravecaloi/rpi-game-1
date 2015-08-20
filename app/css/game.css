@@ -5,6 +5,23 @@ body{
   /*overflow: hidden;*/
 }
 
+.logo_container{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.logo_container > img{
+  opacity: 0.2;
+  width: 40px;
+  margin: 20px;
+}
+
+.logo_container > img.selected{
+  opacity: 1;
+}
+
 .dots_container{
   height: 100%;
   width: 100%;
