@@ -18,12 +18,10 @@ var currentAudioEnv = 8;
 AUDIO_LIBS = {};
 
 // Define here the sounds path to use.
-// WARNING: sound files' names have to be the same in all folders
-// TODO DEFINE this directly on the python script?
-AUDIO_LIBS['keyPressed_8']  = 'wav';
-AUDIO_LIBS['keyPressed_9']  = 'wav';
-AUDIO_LIBS['keyPressed_10'] = 'wav';
-AUDIO_LIBS['keyPressed_11'] = 'wav';
+AUDIO_LIBS['keyPressed_8']  = 'SOUND_MAPPING_0';
+AUDIO_LIBS['keyPressed_9']  = 'SOUND_MAPPING_1';
+AUDIO_LIBS['keyPressed_10'] = 'SOUND_MAPPING_2';
+AUDIO_LIBS['keyPressed_11'] = 'SOUND_MAPPING_3';
 
 function changeEnvAudioVariable(num){
   $('#keyPressed_' + currentAudioEnv).removeClass('selected');
