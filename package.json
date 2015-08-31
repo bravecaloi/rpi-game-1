@@ -10,7 +10,7 @@
   "window": {
     "toolbar": false,
     "frame": true,
-    "kiosk": true
+    "kiosk": false
   },
   "scripts": {
     "start": "nodewebkit"

@@ -7,7 +7,7 @@ exports.touched = function(req, res) {
   var keyPressed = req.params.number;
 
   if(keyPressed < 8){
-    drawRandomStar();
+    drawRandomStar(keyPressed);
   }else{
     changeEnvAudioVariable(keyPressed);
   }
@@ -33,19 +33,15 @@ function changeEnvAudioVariable(num){
 }
 
 
-function drawRandomStar(){
+function drawRandomStar(keyPressed){
   var dots = getRandomPositionShapeDots();
   for (var i = 0; i < dots.length; i++) {
-    try {
-      var dot = global.window.document.getElementById('dot_' + dots[i]);
-      dot.style['-webkit-animation-name'] = 'r' + keyPressed;
+    var dot = global.window.document.getElementById('dot_' + dots[i]);
+    dot.style['-webkit-animation-name'] = 'r' + keyPressed;
 
-      dot.addEventListener('webkitAnimationEnd', function(){
-        this.style.webkitAnimationName = '';
-      }, false);
-    } catch (e) {
-      // do nothing, but we should fix it
-    }
+    dot.addEventListener('webkitAnimationEnd', function(){
+      this.style.webkitAnimationName = '';
+    }, false);
   }
 }
 
